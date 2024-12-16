@@ -1,0 +1,41 @@
+class Calculator:
+    def __init__(self, num1, num2):
+        self.num1 = num1
+        self.num2 = num2
+
+    def add(self):
+        return self.num1 + self.num2
+
+    def subtract(self):
+        return self.num1 - self.num2
+
+    def multiply(self):
+        return self.num1 * self.num2
+
+    def divide(self):
+        try:
+            return self.num1 / self.num2
+        except ZeroDivisionError:
+            return None
+
+# Ввод данных
+first_num = float(input("Введите первое число: "))
+second_num = float(input("Введите второе число: "))
+
+# Создание экземпляра класса
+calc = Calculator(first_num, second_num)
+
+# Выполнение операций
+result_addition = calc.add()
+result_subtraction = calc.subtract()
+result_multiplication = calc.multiply()
+result_division = calc.divide()
+
+# Вывод результатов
+if result_division is not None:
+    print(f"Сумма чисел: {result_addition}")
+    print(f"Разность чисел: {result_subtraction}")
+    print(f"Произведение чисел: {result_multiplication}")
+    print(f"Частное чисел: {result_division:.2f}")
+else:
+    print("Ошибка! Деление на ноль.")

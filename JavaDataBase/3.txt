@@ -1,0 +1,19 @@
+import operator
+
+operations = {
+    'Сумма': operator.add,
+    'Разность': operator.sub,
+    'Произведение': operator.mul,
+    'Частное': operator.truediv
+}
+
+# Ввод данных
+first_num = float(input("Введите первое число: "))
+second_num = float(input("Введите второе число: "))
+
+for name, op in operations.items():
+    try:
+        result = op(first_num, second_num)
+        print(f"{name}: {result:.2f}")
+    except ZeroDivisionError:
+        print(f"Ошибка! Деление на ноль при вычислении {name}.")

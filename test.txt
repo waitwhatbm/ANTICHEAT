@@ -1,0 +1,59 @@
+def get_input():
+    while True:
+        try:
+            return float(input("Введите число: "))
+        except ValueError:
+            print("Ошибка! Пожалуйста, введите корректное число.")
+
+def addition(a, b):
+    return a + b
+
+def subtraction(a, b):
+    return a - b
+
+def multiplication(a, b):
+    return a * b
+
+def division(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return None
+
+def choose_operation():
+    print("Выберите операцию:")
+    print("1. Сложение")
+    print("2. Вычитание")
+    print("3. Умножение")
+    print("4. Деление")
+    
+    while True:
+        choice = input("Введите номер операции (1/2/3/4): ")
+        if choice in ['1', '2', '3', '4']:
+            return choice
+        else:
+            print("Ошибка! Пожалуйста, выберите корректный номер операции.")
+
+# Ввод данных
+first_num = get_input()
+second_num = get_input()
+
+# Выбор операции
+operation = choose_operation()
+
+# Выполнение выбранной операции
+if operation == '1':
+    result = addition(first_num, second_num)
+    print(f"Сумма чисел: {result}")
+elif operation == '2':
+    result = subtraction(first_num, second_num)
+    print(f"Разность чисел: {result}")
+elif operation == '3':
+    result = multiplication(first_num, second_num)
+    print(f"Произведение чисел: {result}")
+elif operation == '4':
+    result = division(first_num, second_num)
+    if result is not None:
+        print(f"Частное чисел: {result:.2f}")
+    else:
+        print("Ошибка! Деление на ноль.")

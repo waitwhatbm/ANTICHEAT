@@ -1,0 +1,36 @@
+def get_input():
+    return float(input("Введите число: "))
+
+def addition(a, b):
+    return a + b
+
+def subtraction(a, b):
+    return a - b
+
+def multiplication(a, b):
+    return a * b
+
+def division(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return None
+
+# Ввод данных
+first_num = get_input()
+second_num = get_input()
+
+# Выполнение операций
+result_addition = addition(first_num, second_num)
+result_subtraction = subtraction(first_num, second_num)
+result_multiplication = multiplication(first_num, second_num)
+result_division = division(first_num, second_num)
+
+# Вывод результатов
+if result_division is not None:
+    print(f"Сумма чисел: {result_addition}")
+    print(f"Разность чисел: {result_subtraction}")
+    print(f"Произведение чисел: {result_multiplication}")
+    print(f"Частное чисел: {result_division:.2f}")
+else:
+    print("Ошибка! Деление на ноль.")
